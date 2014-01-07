@@ -1,0 +1,15 @@
+<launch>
+    <!-- Turtlesim Node-->
+    <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+
+    <node name="turtle1_broadcaster" pkg="turtle_mix" type="turtle_broadcaster.py" respawn="false" output="screen" >
+      <param name="turtle" type="string" value="turtle1" />
+    </node>
+
+    <node name="turtle2_broadcaster" pkg="turtle_mix" type="turtle_broadcaster.py" respawn="false" output="screen" >
+      <param name="turtle" type="string" value="turtle2" />
+    </node>
+
+    <node pkg="turtle_mix" type="turtle_controller.py" name="listener" />
+
+</launch>
